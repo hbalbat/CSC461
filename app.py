@@ -132,31 +132,10 @@ Invalid input for time. Please enter a valid time in minutes.'
             return result
 
         def create_app():
-            html_content = """
-              <style>
-              .title-container {
-                  display: flex;
-                  align-items: center; /* Vertically align title and logo */
-              }
-              .logo {
-                  margin-left: 10px;  /* Adjust spacing between title and logo */
-              }
-              .logo img {
-                  border: none; /* Remove image border */
-              }
-              </style>
-              <div class="title-container">
-                  <h1>Welcome to MyRecipes!</h1>
-                  <div class="logo">
-                      <img src='/content/drive/MyDrive/CSC461/chefhat.png' width="50" height="50">
-                  </div>
-              </div>
-              """  # HTML to remove image border
-
             with gr.Blocks(theme=gr.themes.Default(primary_hue="lime", secondary_hue="green", neutral_hue='cyan', spacing_size="sm", radius_size="none", text_size='lg')) as app:
                 with gr.Row():
-                    # site logo
-                    gr.HTML(html_content)
+                    # title
+                    gr.Markdown("# Welcome to MyRecipes!")
 
                 # tabs for login + account creation
                 with gr.Tabs() as tabs:
